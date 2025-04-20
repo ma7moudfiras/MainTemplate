@@ -5,7 +5,6 @@ import 'package:palventure/common/widgets/custom_shapes/containers/circular_cont
 import 'package:palventure/common/widgets/images/rounded_image.dart';
 import 'package:palventure/features/main/controlers/home_controller.dart';
 import 'package:palventure/utils/constants/colors.dart';
-import 'package:palventure/utils/constants/image_strings.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 
 class AppPromoSlider extends StatelessWidget {

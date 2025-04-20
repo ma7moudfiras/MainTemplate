@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:palventure/common/widgets/appbar/appbar.dart';
 import 'package:palventure/common/widgets/appbar/tabbar.dart';
+import 'package:palventure/common/widgets/brands/brand_show_case.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:palventure/common/widgets/direct_messages/direct_message_icon.dart';
-import 'package:palventure/common/widgets/images/circular_image.dart';
 import 'package:palventure/common/widgets/layout/grid_layout.dart';
-import 'package:palventure/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:palventure/common/widgets/texts/section_heading.dart';
+import 'package:palventure/features/main/screens/explore/widgets/category_tab.dart';
 import 'package:palventure/utils/constants/colors.dart';
-import 'package:palventure/utils/constants/enums.dart';
 import 'package:palventure/utils/constants/image_strings.dart';
 import 'package:palventure/utils/constants/sizes.dart';
+import 'package:palventure/utils/constants/text_strings.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';
 
-import 'widgets/brand_cards.dart';
+import '../../../../common/widgets/brands/brand_card.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -23,17 +22,33 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final dark = AppHelperFunctions.isDarkMode(context);
+
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        backgroundColor: AppHelperFunctions.isDarkMode(context) ? AppColors.black : AppColors.white ,
-        appBar: MyAppBar(
-          title: Text(
-            'Explore',
-            style: Theme.of(context).textTheme.headlineMedium,
+        backgroundColor: dark ? AppColors.black : AppColors.white ,
+        appBar:
+
+        MyAppBar(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                AppTexts.appbarTitle,
+                style: Theme.of(
+                  context,
+                ).textTheme.labelMedium!.apply(color:  dark ? AppColors.grey : AppColors.darkerGrey),
+              ),
+              Text(
+                AppTexts.exploreAppbarSubTitle,
+                style: Theme.of(context).textTheme.headlineSmall!
+                    .apply(color: dark ? AppColors.white :  AppColors.black),
+              ),
+            ],
           ),
         ),
-      
+
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
@@ -62,14 +77,14 @@ class ExploreScreen extends StatelessWidget {
                           padding: EdgeInsets.zero,
                       ),
 
-                      const SizedBox(height: AppSizes.spaceBtwSections),
+                      const SizedBox(height: AppSizes.spaceBtwItems*1.5),
       
                       /// -- Our Partners Text --
-                      AppSectionHeading(title: 'Our Top Partners', onPressed: () {}),
+                      AppSectionHeading(title: 'Top Partners', onPressed: () {},),
                       const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
       
                       /// -- Our Top Partners Grid --
-                      AppGridLayout(itemCount: 4, mainAxisExtent: 80 , itemBuilder: (_, index) {
+                      AppGridLayout(itemCount: 2, mainAxisExtent: 80 , itemBuilder: (_, index) {
                         return const AppBrandCard();
       
       
@@ -87,42 +102,25 @@ class ExploreScreen extends StatelessWidget {
                   Tab(child: Text('Jobs')),
                   Tab(child: Text('Jobs')),
                   Tab(child: Text('Jobs')),
+
                 ],)
 
               ),
             ];
           },
       
-      
-      
-          body: TabBarView(children: [
-            Padding(padding: const EdgeInsets.all(AppSizes.defaultSpace),
-              child: Column(
-                children: [
+
+          body: TabBarView(
+
+              children: [
+
+                AppCategoryTab(),
+                AppCategoryTab(),
+                AppCategoryTab(),
+                AppCategoryTab(),
+                AppCategoryTab(),
 
 
-
-                  AppRoundedContainer(
-                    showBorder: false,
-                    borderColor: AppColors.darkGrey,
-                    backgroundColor: Colors.transparent,
-                    margin: const EdgeInsets.only(bottom: AppSizes.spaceBtwItems),
-                    child: Column(
-                      children: [
-
-                        const AppBrandCard(),
-                        const SizedBox(height: AppSizes.spaceBtwItems),
-                        const AppBrandCard(),
-                      ],
-                    ),
-                  ),
-
-
-
-                ],
-              ),
-
-            ),
           ]
 
           ),
@@ -131,5 +129,8 @@ class ExploreScreen extends StatelessWidget {
     );
   }
 }
+
+
+
 
 

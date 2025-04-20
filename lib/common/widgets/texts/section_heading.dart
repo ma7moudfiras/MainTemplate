@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:palventure/utils/constants/colors.dart';
-import 'package:palventure/utils/constants/sizes.dart';
 
 class AppSectionHeading extends StatelessWidget {
   const AppSectionHeading({

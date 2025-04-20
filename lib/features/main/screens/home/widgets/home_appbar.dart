@@ -16,7 +16,7 @@ class MyHomeAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppTexts.homeAppbarTitle,
+            AppTexts.appbarTitle,
             style: Theme.of(
               context,
             ).textTheme.labelMedium!.apply(color: AppColors.grey),

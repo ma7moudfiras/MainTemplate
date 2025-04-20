@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/device/device_utility.dart';
-import 'package:palventure/utils/helpers/helper_functions.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
