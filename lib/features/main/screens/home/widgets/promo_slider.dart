@@ -33,7 +33,7 @@ class AppPromoSlider extends StatelessWidget {
 
         const SizedBox(height: AppSizes.spaceBtwItems),
 
-
+/*
         Center(
           child: Obx(
             () => Row(
@@ -49,6 +49,9 @@ class AppPromoSlider extends StatelessWidget {
             ),
           ),
         ),
+
+        const SizedBox(height: AppSizes.spaceBtwSections),
+*/
       ],
     );
   }

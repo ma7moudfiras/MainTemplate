@@ -3,10 +3,7 @@ import 'package:palventure/common/widgets/custom_shapes/containers/primary_heade
 import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:palventure/common/widgets/layout/grid_layout.dart';
 import 'package:palventure/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:palventure/common/widgets/texts/product_title_text.dart';
-import 'package:palventure/common/widgets/texts/section_heading.dart';
 import 'package:palventure/features/main/screens/home/widgets/home_appbar.dart';
-import 'package:palventure/features/main/screens/home/widgets/home_categories.dart';
 import 'package:palventure/features/main/screens/home/widgets/promo_slider.dart';
 import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/constants/image_strings.dart';
@@ -34,11 +31,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   /// -- App Bar --
                   MyHomeAppBar(),
-                  SizedBox(height: AppSizes.spaceBtwSections),
+               //   SizedBox(height: AppSizes.spaceBtwItems / 2),
 
                   /// -- Searchbar --
-                  SizedBox(child: AppSearchContainer(text: 'Search')),
-                  SizedBox(height: AppSizes.spaceBtwItems),
+                  AppSearchContainer(),       //        SizedBox(height: AppSizes.spaceBtwItems / 2),
 
                 /*
 
@@ -62,7 +58,7 @@ class HomeScreen extends StatelessWidget {
 */
                   /// --- Promo Slider --
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
                     child: const AppPromoSlider(
                       banners: [
                         AppImages.promoBanner1,

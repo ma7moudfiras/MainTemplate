@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:palventure/common/widgets/appbar/appbar.dart';
 import 'package:palventure/common/widgets/appbar/tabbar.dart';
-import 'package:palventure/common/widgets/brands/brand_show_case.dart';
-import 'package:palventure/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:palventure/common/widgets/layout/grid_layout.dart';
 import 'package:palventure/common/widgets/texts/section_heading.dart';
 import 'package:palventure/features/main/screens/explore/widgets/category_tab.dart';
 import 'package:palventure/utils/constants/colors.dart';
-import 'package:palventure/utils/constants/image_strings.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/constants/text_strings.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';
@@ -71,7 +67,6 @@ class ExploreScreen extends StatelessWidget {
                       /// -- Searchbar --
                       const SizedBox(height: AppSizes.spaceBtwItems / 2),
                       const AppSearchContainer(
-                          text: 'Search',
                           showBorder: true,
                           showBackground: false,
                           padding: EdgeInsets.zero,

@@ -36,7 +36,7 @@ class AppProductCardVertical extends StatelessWidget {
           child: Column(
             children: [
               AppRoundedContainer(
-            //    height: 200,
+             //   height: 200,
             //    padding: const EdgeInsets.all(AppSizes.sm),
              //   backgroundColor: dark ? AppColors.dark : AppColors.light,
                 child: Stack(

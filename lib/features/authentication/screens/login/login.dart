@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:palventure/common/styles/spacing_styles.dart';
 import 'package:palventure/common/widgets/login_signup/form_divider.dart';
 import 'package:palventure/common/widgets/login_signup/social_buttons.dart';

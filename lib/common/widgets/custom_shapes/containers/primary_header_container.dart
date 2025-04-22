@@ -5,7 +5,8 @@ import 'package:palventure/utils/constants/colors.dart';
 
 class AppPrimaryHeaderContainer extends StatelessWidget {
   const AppPrimaryHeaderContainer({
-    super.key, required this.child,
+    super.key,
+    required this.child,
   });
 
   final Widget child;
@@ -16,36 +17,32 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: AppColors.darkerGrey,
         padding: const EdgeInsets.only(bottom: 0),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
 
-        child: SizedBox(
-          height: 470,
-          child: Stack(
-            children: [
-
-              /// White Circles
-              Positioned(
-                top: -150,
-                right: -250,
-                child: AppCircularContainer(
-                  backgroundColor: AppColors.white.withOpacity(0.1),
-                ),
+            /// Decorative Circles
+            Positioned(
+              top: -150,
+              right: -250,
+              child: AppCircularContainer(
+                backgroundColor: AppColors.white.withOpacity(0.1),
               ),
-              Positioned(
-                top: 150,
-                right: -300,
-                child: AppCircularContainer(
-                  backgroundColor: AppColors.white.withOpacity(0.1),
-                ),
+            ),
+            Positioned(
+              top: 150,
+              right: -300,
+              child: AppCircularContainer(
+                backgroundColor: AppColors.white.withOpacity(0.1),
               ),
-              child,
+            ),
 
+            /// The main child
+            child,
 
-
-            ],
-          ),
+          ],
         ),
       ),
     );
   }
 }
-
