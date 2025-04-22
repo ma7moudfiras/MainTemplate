@@ -18,9 +18,8 @@ class AppProductCardVertical extends StatelessWidget {
     final dark = AppHelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
-        height: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [AppShadowStyle.verticalProductShadow],
@@ -28,17 +27,47 @@ class AppProductCardVertical extends StatelessWidget {
           color: dark ? AppColors.darkerGrey : AppColors.white,
         ),
 
-
         /// Image
-
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              Row(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(
+                        Iconsax.add_circle,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        size: AppSizes.iconMd,
+                      ),
+
+                      const SizedBox(width: AppSizes.xs),
+
+                      Text(
+                        'Sharek Youth Forum',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(width: AppSizes.xs),
+
+                  const Icon(
+                    Iconsax.verify5,
+                    color: AppColors.primary,
+                    size: AppSizes.iconXs,
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: AppSizes.spaceBtwItems / 2),
+
               AppRoundedContainer(
-             //   height: 200,
-            //    padding: const EdgeInsets.all(AppSizes.sm),
-             //   backgroundColor: dark ? AppColors.dark : AppColors.light,
+                //height: 250,
+                //    padding: const EdgeInsets.all(AppSizes.sm),
                 child: Stack(
                   children: [
                     const AppRoundedImage(
@@ -68,7 +97,6 @@ class AppProductCardVertical extends StatelessWidget {
 
                     /// --- Favorite Icon Button --- ///
                     Positioned(
-
                       top: 6,
                       right: 6,
                       child: const AppCircularIcon(
@@ -87,32 +115,62 @@ class AppProductCardVertical extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const AppProductTitleText(title: 'Join Us In MUN'),
-                    const SizedBox(height: AppSizes.spaceBtwItems / 2),
-                    Row(
+                    const SizedBox(height: AppSizes.spaceBtwItems / 4),
+
+                    Column(
                       children: [
-                        Text(
-                          'Sharek Youth Forum',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        const SizedBox(height: AppSizes.xs),
-                        const Icon(
-                          Iconsax.verify5,
-                          color: AppColors.primary,
-                          size: AppSizes.iconXs,
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share Share ',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context).textTheme.labelSmall,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
 
-                    Row(
-                      children: [
-                        Text('Buttons here', maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.headlineSmall,)
-                      ],
-                    )
 
                   ],
                 ),
+              ),
+
+
+
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      const Icon(
+                        Iconsax.like,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        size: AppSizes.iconMd,
+                      ),
+
+                      const SizedBox(width: AppSizes.xs),
+
+                      const Icon(
+                        Iconsax.direct5,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        size: AppSizes.iconMd,
+                      ),
+
+                      const SizedBox(width: AppSizes.xs),
+
+                      const Icon(
+                        Iconsax.add_circle,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        size: AppSizes.iconMd,
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),

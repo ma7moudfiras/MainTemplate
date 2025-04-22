@@ -6,27 +6,20 @@ class AppGridLayout extends StatelessWidget {
     super.key,
     required this.itemCount,
     required this.itemBuilder,
-    this.mainAxisExtent = 320,
   });
 
   final int itemCount;
-  final double? mainAxisExtent;
   final Widget? Function(BuildContext, int) itemBuilder;
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: itemCount,
-      shrinkWrap: true,
+    return ListView.separated(
+      physics: const NeverScrollableScrollPhysics(), // scroll outside
+      shrinkWrap: true, // let height be based on children
       padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        mainAxisExtent: mainAxisExtent,
-        mainAxisSpacing: AppSizes.gridViewSpacing,
-        crossAxisSpacing: AppSizes.gridViewSpacing,
-      ),
-      itemBuilder: itemBuilder,
+      itemCount: itemCount,
+      itemBuilder: (context, index) => itemBuilder(context, index)!,
+      separatorBuilder: (context, index) => const SizedBox(height: AppSizes.gridViewSpacing),
     );
   }
 }
