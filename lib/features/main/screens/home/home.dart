@@ -16,92 +16,101 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
       /// --- Color of the Stacked Widget
-      backgroundColor: AppHelperFunctions.isDarkMode(context) ? AppColors.black : AppColors.white ,
-
+      backgroundColor:
+          AppHelperFunctions.isDarkMode(context)
+              ? AppColors.black
+              : AppColors.white,
 
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            /// -- Header --
-            AppPrimaryHeaderContainer(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 600),
               child: Column(
                 children: [
-                  /// -- App Bar --
-                  MyHomeAppBar(),
-               //   SizedBox(height: AppSizes.spaceBtwItems / 2),
-
-                  /// -- Searchbar --
-                  AppSearchContainer(),       //        SizedBox(height: AppSizes.spaceBtwItems / 2),
-
-                /*
-
-                  /// -- Section Heading --
-                  Padding(
-                    padding: EdgeInsets.only(left: AppSizes.defaultSpace),
+                  /// -- Header --
+                  AppPrimaryHeaderContainer(
                     child: Column(
                       children: [
-                        AppSectionHeading(
-                          title: 'Main Categories',
-                          showActionButton: false,
-                          textColor: AppColors.white,
+                        /// -- App Bar --
+                        MyHomeAppBar(),
+                        //   SizedBox(height: AppSizes.spaceBtwItems / 2),
+
+                        /// -- Searchbar --
+                        AppSearchContainer(), //        SizedBox(height: AppSizes.spaceBtwItems / 2),
+                        /*
+                        /// -- Section Heading --
+                        Padding(
+                          padding: EdgeInsets.only(left: AppSizes.defaultSpace),
+                          child: Column(
+                            children: [
+                              AppSectionHeading(
+                                title: 'Main Categories',
+                                showActionButton: false,
+                                textColor: AppColors.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: AppSizes.spaceBtwItems),
+          
+                        /// --- Categories --
+                        AppHomeCategories(),
+                      */
+
+                        /// --- Promo Slider ---
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
+                          child: const AppPromoSlider(
+                            banners: [
+                              AppImages.promoBanner1,
+                              AppImages.promoBanner1,
+                              AppImages.promoBanner2,
+                              AppImages.promoBanner3,
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: AppSizes.spaceBtwItems),
 
-                  /// --- Categories --
-                  AppHomeCategories(),
-*/
-                  /// --- Promo Slider --
+                  /// --- Bottom Body --
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
-                    child: const AppPromoSlider(
-                      banners: [
-                        AppImages.promoBanner1,
-                        AppImages.promoBanner1,
-                        AppImages.promoBanner2,
-                        AppImages.promoBanner3,
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSizes.defaultSpace,
+                      AppSizes.spaceBtwItems / 2,
+                      AppSizes.defaultSpace,
+                      AppSizes.defaultSpace,
+                    ),
+                    child: Column(
+                      children: [
+                        /*
+                        /// --- Promo Slider --
+                        const AppPromoSlider(
+                          banners: [
+                            AppImages.promoBanner1,
+                            AppImages.promoBanner1,
+                            AppImages.promoBanner2,
+                            AppImages.promoBanner3,
+                          ],
+                        ),
+                        const SizedBox(height: AppSizes.spaceBtwItems),
+                      */
+
+                        /// --- Products --- ///
+                        AppGridLayout(
+                          itemCount: 4,
+                          itemBuilder:
+                              (_, index) => const AppProductCardVertical(),
+                        ),
                       ],
                     ),
                   ),
-
-
-
                 ],
               ),
             ),
-
-
-            /// --- Bottom Body --
-            Padding(
-              padding: const EdgeInsets.fromLTRB(AppSizes.defaultSpace,AppSizes.spaceBtwItems/2,AppSizes.defaultSpace,AppSizes.defaultSpace),
-              child: Column(
-                children: [
-/*
-                  /// --- Promo Slider --
-                  const AppPromoSlider(
-                    banners: [
-                      AppImages.promoBanner1,
-                      AppImages.promoBanner1,
-                      AppImages.promoBanner2,
-                      AppImages.promoBanner3,
-                    ],
-                  ),
-                  const SizedBox(height: AppSizes.spaceBtwItems),
-*/
-                  /// --- Products --- ///
-                  AppGridLayout(itemCount: 4,itemBuilder: (_,  index) => const AppProductCardVertical()),
-
-
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+    
       ),
     );
   }

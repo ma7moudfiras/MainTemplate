@@ -75,6 +75,7 @@ class AppProductCardVertical extends StatelessWidget {
                       applyImageRadius: true,
                     ),
 
+/*
                     /// --- Discount Badge --- ///
                     Positioned(
                       top: 6,
@@ -104,6 +105,8 @@ class AppProductCardVertical extends StatelessWidget {
                         color: Colors.red,
                       ),
                     ),
+*/
+
                   ],
                 ),
               ),
@@ -114,8 +117,8 @@ class AppProductCardVertical extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+
                     const AppProductTitleText(title: 'Join Us In MUN'),
-                    const SizedBox(height: AppSizes.spaceBtwItems / 4),
 
                     Column(
                       children: [
@@ -129,24 +132,21 @@ class AppProductCardVertical extends StatelessWidget {
                                 style: Theme.of(context).textTheme.labelSmall,
                               ),
                             ),
+
+                          
                           ],
                         ),
                       ],
                     ),
-
-
                   ],
                 ),
               ),
-
-
 
               Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-
                       const Icon(
                         Iconsax.like,
                         color: Color.fromARGB(255, 255, 255, 255),

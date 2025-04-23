@@ -79,7 +79,7 @@ class ExploreScreen extends StatelessWidget {
                       const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
       
                       /// -- Our Top Partners Grid --
-                      AppGridLayout(itemCount: 2, mainAxisExtent: 80 , itemBuilder: (_, index) {
+                      AppGridLayout(itemCount: 2 , itemBuilder: (_, index) {
                         return const AppBrandCard();
       
       
