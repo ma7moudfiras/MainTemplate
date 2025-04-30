@@ -7,6 +7,8 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
   const AppPrimaryHeaderContainer({
     super.key,
     required this.child,
+    super.key,
+    required this.child,
   });
 
   final Widget child;
