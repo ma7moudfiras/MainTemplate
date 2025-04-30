@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:palventure/common/widgets/layout/grid_layout.dart';
 import 'package:palventure/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:palventure/features/main/screens/home/widgets/home_appbar.dart';
