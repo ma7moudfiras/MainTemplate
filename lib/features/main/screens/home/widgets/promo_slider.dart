@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:palventure/common/widgets/images/rounded_image.dart';
 import 'package:palventure/features/main/controlers/home_controller.dart';
+<<<<<<< HEAD
+=======
+>>>>>>> dfa50593abfb55628a700872fac268c3278da747
 
 class AppPromoSlider extends StatelessWidget {
   const AppPromoSlider({super.key, required this.banners});
@@ -33,9 +36,15 @@ class AppPromoSlider extends StatelessWidget {
           items: banners.map((url) => AppRoundedImage(imageUrl: url)).toList(),
         ),
 
+<<<<<<< HEAD
     //    const SizedBox(height: AppSizes.spaceBtwItems),
 
         /*
+=======
+        const SizedBox(height: AppSizes.spaceBtwItems),
+
+/*
+>>>>>>> dfa50593abfb55628a700872fac268c3278da747
         Center(
           child: Obx(
             () => Row(
