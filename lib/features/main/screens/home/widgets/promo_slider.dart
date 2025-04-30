@@ -3,35 +3,39 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:palventure/common/widgets/images/rounded_image.dart';
 import 'package:palventure/features/main/controlers/home_controller.dart';
-import 'package:palventure/utils/constants/sizes.dart';
 
 class AppPromoSlider extends StatelessWidget {
-  const AppPromoSlider({
-    super.key,
+  const AppPromoSlider({super.key, required this.banners});
 
-    required this.banners,
-  });
-  
   final List<String> banners;
 
   @override
   Widget build(BuildContext context) {
-    
     final controller = Get.put(HomeController());
-    
+
     return Column(
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              viewportFraction: 1,
-              onPageChanged: (index, _) => controller.updatePageIndicator(index) ),
-          
-          items:  banners.map((url) =>  AppRoundedImage(imageUrl: url)).toList(),
+            autoPlay: true,
+            autoPlayAnimationDuration: Duration(seconds: 1),
+            autoPlayInterval: Duration(seconds: 5),
+            pauseAutoPlayOnTouch: true,
+            viewportFraction: 0.5,
+
+            enlargeCenterPage: true,
+            aspectRatio: 3,
+            autoPlayCurve: Curves.linear,
+
+            onPageChanged: (index, _) => controller.updatePageIndicator(index),
+          ),
+
+          items: banners.map((url) => AppRoundedImage(imageUrl: url)).toList(),
         ),
 
-        const SizedBox(height: AppSizes.spaceBtwItems),
+    //    const SizedBox(height: AppSizes.spaceBtwItems),
 
-/*
+        /*
         Center(
           child: Obx(
             () => Row(

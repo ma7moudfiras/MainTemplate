@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:palventure/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:palventure/features/authentication/screens/signup/signup.dart';
-import 'package:palventure/navigation_menu.dart';
+import 'package:palventure/features/navigation_bar/navigation_menu.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/constants/text_strings.dart';
 
@@ -15,7 +15,7 @@ class AppLoginForm extends StatelessWidget {
     return Form(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: AppSizes.spaceBtwSections,
+          vertical: AppSizes.spaceBtwItems,
         ),
         child: Column(
           children: [
@@ -75,7 +75,7 @@ class AppLoginForm extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => Get.off(() => const NavigationMenu()),
                 child: const Text(AppTexts.signIn),
-              ),
+              ), 
             ),
 
             const SizedBox(height: AppSizes.spaceBtwItems),

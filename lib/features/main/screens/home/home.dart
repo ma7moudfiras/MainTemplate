@@ -1,117 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:palventure/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:palventure/common/widgets/layout/grid_layout.dart';
-import 'package:palventure/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:palventure/features/main/screens/home/widgets/home_appbar.dart';
-import 'package:palventure/features/main/screens/home/widgets/promo_slider.dart';
-import 'package:palventure/utils/constants/colors.dart';
-import 'package:palventure/utils/constants/image_strings.dart';
-import 'package:palventure/utils/constants/sizes.dart';
-import 'package:palventure/utils/helpers/helper_functions.dart';
+import 'package:palventure/features/main/screens/home/mobile_home.dart';
+import 'package:palventure/features/main/screens/home/responsive.dart';
+import 'package:palventure/features/main/screens/home/web_home.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      /// --- Color of the Stacked Widget
-      backgroundColor:
-          AppHelperFunctions.isDarkMode(context)
-              ? AppColors.black
-              : AppColors.white,
-
-      body: SingleChildScrollView(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 600),
-              child: Column(
-                children: [
-                  /// -- Header --
-                  AppPrimaryHeaderContainer(
-                    child: Column(
-                      children: [
-                        /// -- App Bar --
-                        MyHomeAppBar(),
-                        //   SizedBox(height: AppSizes.spaceBtwItems / 2),
-
-                        /// -- Searchbar --
-                        AppSearchContainer(), //        SizedBox(height: AppSizes.spaceBtwItems / 2),
-                        /*
-                        /// -- Section Heading --
-                        Padding(
-                          padding: EdgeInsets.only(left: AppSizes.defaultSpace),
-                          child: Column(
-                            children: [
-                              AppSectionHeading(
-                                title: 'Main Categories',
-                                showActionButton: false,
-                                textColor: AppColors.white,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: AppSizes.spaceBtwItems),
-          
-                        /// --- Categories --
-                        AppHomeCategories(),
-                      */
-
-                        /// --- Promo Slider ---
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
-                          child: const AppPromoSlider(
-                            banners: [
-                              AppImages.promoBanner1,
-                              AppImages.promoBanner1,
-                              AppImages.promoBanner2,
-                              AppImages.promoBanner3,
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  /// --- Bottom Body --
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSizes.defaultSpace,
-                      AppSizes.spaceBtwItems / 2,
-                      AppSizes.defaultSpace,
-                      AppSizes.defaultSpace,
-                    ),
-                    child: Column(
-                      children: [
-                        /*
-                        /// --- Promo Slider --
-                        const AppPromoSlider(
-                          banners: [
-                            AppImages.promoBanner1,
-                            AppImages.promoBanner1,
-                            AppImages.promoBanner2,
-                            AppImages.promoBanner3,
-                          ],
-                        ),
-                        const SizedBox(height: AppSizes.spaceBtwItems),
-                      */
-
-                        /// --- Products --- ///
-                        AppGridLayout(
-                          itemCount: 4,
-                          itemBuilder:
-                              (_, index) => const AppProductCardVertical(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-    
-      ),
-    );
+    if (ResponsiveHelper.isMobileWeb(context)) {
+      return const MobileHomeScreen(); // Web (Mobile Layout)
+    } else if (ResponsiveHelper.isDesktopWeb(context)) {
+      return const WebHomeScreen(); // Web (Desktop Layout)
+    } else if (ResponsiveHelper.isMobileApp()) {
+      return const MobileHomeScreen(); // Mobile App
+    } else {
+      return const WebHomeScreen(); // Desktop App fallback
+    }
   }
 }

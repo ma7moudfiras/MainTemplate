@@ -3,8 +3,8 @@ import 'package:palventure/features/main/screens/alerts/widgets/alerts_appbar.da
 import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';
 
-class Alerts extends StatelessWidget {
-  const Alerts({super.key});
+class AlertsScreen extends StatelessWidget {
+  const AlertsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

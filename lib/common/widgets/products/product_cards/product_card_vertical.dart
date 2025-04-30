@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:palventure/common/styles/shadows.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:palventure/common/widgets/icons/circular_icon.dart';
 import 'package:palventure/common/widgets/images/rounded_image.dart';
 import 'package:palventure/common/widgets/texts/product_title_text.dart';
 import 'package:palventure/utils/constants/colors.dart';
@@ -38,7 +37,7 @@ class AppProductCardVertical extends StatelessWidget {
                     children: [
                       const Icon(
                         Iconsax.add_circle,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: AppColors.white,
                         size: AppSizes.iconMd,
                       ),
 
@@ -66,7 +65,7 @@ class AppProductCardVertical extends StatelessWidget {
               const SizedBox(height: AppSizes.spaceBtwItems / 2),
 
               AppRoundedContainer(
-            //    height: 200,
+             //   height: 200,
             //    padding: const EdgeInsets.all(AppSizes.sm),
              //   backgroundColor: dark ? AppColors.dark : AppColors.light,
                 child: Stack(
@@ -106,7 +105,8 @@ class AppProductCardVertical extends StatelessWidget {
                         color: Colors.red,
                       ),
                     ),
-*/
+
+ */     
 
                   ],
                 ),

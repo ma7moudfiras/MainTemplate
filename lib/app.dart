@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:palventure/features/main/screens/home/home.dart';
+import 'package:palventure/features/navigation_bar/navigation_menu.dart';
 import 'package:palventure/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const HomeScreen(),
+      home: const NavigationMenu(),
 
     );
   }
