@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:palventure/features/authentication/screens/onboarding/controllers_onboarding/onboarding_controller.dart';
-import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/device/device_utility.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';

@@ -20,9 +20,14 @@ class AppTexts {
   static const String onBoardingSubTitle2 = "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
-  // -- Home
-  static const String homeAppbarTitle = "Welcome Back";
+  // -- AppBar
+
+  static String appbarTitle = getGreetingMessage();
+
   static const String homeAppbarSubTitle = "Mahmoud Fannoun";
+  static const String exploreAppbarSubTitle = "Explore with Us";
+  static const String alertsAppbarSubTitle = "Alerts And Applications";
+  static const String profileAppbarSubTitle = "Alerts And Applications";
 
  // Authentication Form Text
   static const String firstName = "First Name";
@@ -46,6 +51,7 @@ class AppTexts {
   static const String resendEmailIn = "Resend email in";
   static const String next = "Next";
   static const String $continue = "Continue";
+  static const String orContinueWith = "Or Continue With";
 
 
   // Authentication Headings Text
@@ -64,4 +70,19 @@ class AppTexts {
 
 
 
+
+
+
+}
+
+String getGreetingMessage() {
+  final hour = DateTime.now().hour;
+
+  if (hour >= 5 && hour < 12) {
+    return 'Good Morning ☀️';
+  } else if (hour >= 12 && hour < 17) {
+    return 'Good Afternoon 🌤️';
+  } else {
+    return 'Good Evening 🌙';
+  }
 }

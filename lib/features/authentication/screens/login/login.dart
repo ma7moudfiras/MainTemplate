@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:palventure/common/styles/spacing_styles.dart';
 import 'package:palventure/common/widgets/login_signup/form_divider.dart';
 import 'package:palventure/common/widgets/login_signup/social_buttons.dart';
@@ -14,26 +13,29 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: AppSpacingStyle.paddingWithAppBarWeight,
-          child: Column(
-            children: [
-              ///Logo, Title and sub-title
-              AppLoginHeader(),
-
-              ///Form
-              AppLoginForm(),
-
-              /// Divider
-              AppFormDivider(dividerText: AppTexts.orSignInWith.capitalize!,),
-
-              const SizedBox(height: AppSizes.spaceBtwSections),
-
-              ///Footer
-              AppSocialButtons(),
-            ],
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 600),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: AppSpacingStyle.paddingWithAppBarWeight,
+            child: Column(
+              children: [
+                ///Logo, Title and sub-title
+                AppLoginHeader(),
+      
+                ///Form
+                AppLoginForm(),
+      
+                /// Divider
+                AppFormDivider(dividerText: AppTexts.orContinueWith),
+      
+                const SizedBox(height: AppSizes.spaceBtwItems),
+      
+                ///Footer
+                AppSocialButtons(),
+              ],
+            ),
           ),
         ),
       ),

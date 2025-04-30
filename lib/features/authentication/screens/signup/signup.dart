@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:palventure/common/widgets/login_signup/form_divider.dart';
 import 'package:palventure/common/widgets/login_signup/social_buttons.dart';
 import 'package:palventure/utils/constants/sizes.dart';
@@ -32,17 +31,17 @@ class SignupScreen extends StatelessWidget {
 
               const SizedBox(height: AppSizes.spaceBtwSections),
 
-              ///Form
+              /// Form
               AppSignupForm(),
 
               const SizedBox(height: AppSizes.spaceBtwSections),
               
               /// Divider
-              AppFormDivider(dividerText: AppTexts.orSignUpWith.capitalize!),
+              AppFormDivider(dividerText: AppTexts.orContinueWith),
 
-              const SizedBox(height: AppSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwItems),
 
-              ///Social Buttons
+              /// Social Buttons
               const AppSocialButtons()
 
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palventure/common/widgets/images/circular_image.dart';
 import 'package:palventure/utils/constants/image_strings.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/constants/text_strings.dart';
@@ -11,13 +12,14 @@ class AppLoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = AppHelperFunctions.isDarkMode(context);
     return Column(
+    
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image(
-          height: 100,
-          image: AssetImage(
-            dark ? AppImages.lightAppLogo : AppImages.darkAppLogo,
-          ),
+        AppCircularImage(
+          fit: BoxFit.scaleDown,
+
+          image: dark ? AppImages.lightAppLogo : AppImages.darkAppLogo,
+          
         ),
 
         Text(

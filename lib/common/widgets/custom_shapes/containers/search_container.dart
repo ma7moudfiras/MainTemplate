@@ -8,7 +8,7 @@ import 'package:palventure/utils/helpers/helper_functions.dart';
 class AppSearchContainer extends StatelessWidget {
   const AppSearchContainer({
     super.key,
-    required this.text,
+    this.text = 'Search',
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
@@ -16,7 +16,7 @@ class AppSearchContainer extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace)
   });
 
-  final String text;
+  final String? text;
   final IconData icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
@@ -52,7 +52,7 @@ class AppSearchContainer extends StatelessWidget {
             children: [
               Icon(icon, color: AppColors.darkGrey),
               const SizedBox(width: AppSizes.spaceBtwItems),
-              Text(text, style: Theme.of(context).textTheme.bodySmall),
+              Text(text!, style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
         ),
