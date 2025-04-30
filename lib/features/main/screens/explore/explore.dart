@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:palventure/common/widgets/appbar/appbar.dart';
 import 'package:palventure/common/widgets/appbar/tabbar.dart';
 import 'package:palventure/common/widgets/custom_shapes/containers/search_container.dart';
@@ -10,10 +9,6 @@ import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/constants/sizes.dart';
 import 'package:palventure/utils/constants/text_strings.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';
-<<<<<<< HEAD
-=======
-
->>>>>>> dfa50593abfb55628a700872fac268c3278da747
 import '../../../../common/widgets/brands/brand_card.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -48,23 +43,9 @@ class ExploreScreen extends StatelessWidget {
             ],
           ),
         ),
-<<<<<<< HEAD
-=======
-
-        body: NestedScrollView(
-          headerSliverBuilder: (_, innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                pinned: true,
-                floating: true,
-                backgroundColor: AppHelperFunctions.isDarkMode(context) ? AppColors.black : AppColors.white,
-                expandedHeight: 400,                 /// Actually 480
->>>>>>> dfa50593abfb55628a700872fac268c3278da747
 
         
 
-<<<<<<< HEAD
         body: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 600),
@@ -142,70 +123,6 @@ class ExploreScreen extends StatelessWidget {
             
               ),
             ),
-=======
-
-                flexibleSpace: Padding(
-                  padding: const EdgeInsets.all(AppSizes.defaultSpace),
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: [
-      
-                      /// -- Searchbar --
-                      const SizedBox(height: AppSizes.spaceBtwItems / 2),
-                      const AppSearchContainer(
-                          showBorder: true,
-                          showBackground: false,
-                          padding: EdgeInsets.zero,
-                      ),
-
-                      const SizedBox(height: AppSizes.spaceBtwItems*1.5),
-      
-                      /// -- Our Partners Text --
-                      AppSectionHeading(title: 'Top Partners', onPressed: () {},),
-                      const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
-      
-                      /// -- Our Top Partners Grid --
-                      AppGridLayout(itemCount: 2 , itemBuilder: (_, index) {
-                        return const AppBrandCard();
-      
-      
-                      })
-                    ],
-                  ),
-                ),
-      
-                /// -- Tabs --
-      
-                bottom:  const AppTabBar(
-                  tabs: [
-                  Tab(child: Text('Jobs')),
-                  Tab(child: Text('Jobs')),
-                  Tab(child: Text('Jobs')),
-                  Tab(child: Text('Jobs')),
-                  Tab(child: Text('Jobs')),
-
-                ],)
-
-              ),
-            ];
-          },
-      
-
-          body: TabBarView(
-
-              children: [
-
-                AppCategoryTab(),
-                AppCategoryTab(),
-                AppCategoryTab(),
-                AppCategoryTab(),
-                AppCategoryTab(),
-
-
-          ]
-
->>>>>>> dfa50593abfb55628a700872fac268c3278da747
           ),
         ),
       ),
