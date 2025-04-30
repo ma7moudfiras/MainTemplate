@@ -66,8 +66,9 @@ class AppProductCardVertical extends StatelessWidget {
               const SizedBox(height: AppSizes.spaceBtwItems / 2),
 
               AppRoundedContainer(
-                //height: 250,
-                //    padding: const EdgeInsets.all(AppSizes.sm),
+            //    height: 200,
+            //    padding: const EdgeInsets.all(AppSizes.sm),
+             //   backgroundColor: dark ? AppColors.dark : AppColors.light,
                 child: Stack(
                   children: [
                     const AppRoundedImage(
