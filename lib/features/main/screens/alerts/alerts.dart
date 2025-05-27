@@ -11,6 +11,8 @@ class AlertsScreen extends StatelessWidget {
     final dark = AppHelperFunctions.isDarkMode(context);
 
     return Scaffold(
+      appBar: MyAlertsAppBar(),
+
 
       backgroundColor: dark ? AppColors.black : AppColors.white,
 
@@ -19,7 +21,6 @@ class AlertsScreen extends StatelessWidget {
           children: [
 
             /// --- App Bar --- ///
-            MyAlertsAppBar(),
 
             /// ---   --- ///
 

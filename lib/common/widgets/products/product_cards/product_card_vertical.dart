@@ -150,7 +150,7 @@ class AppProductCardVertical extends StatelessWidget {
                     children: [
                       const Icon(
                         Iconsax.like,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: AppColors.white,
                         size: AppSizes.iconMd,
                       ),
 
@@ -158,7 +158,7 @@ class AppProductCardVertical extends StatelessWidget {
 
                       const Icon(
                         Iconsax.direct5,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: AppColors.white,
                         size: AppSizes.iconMd,
                       ),
 
@@ -166,7 +166,7 @@ class AppProductCardVertical extends StatelessWidget {
 
                       const Icon(
                         Iconsax.add_circle,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: AppColors.white,
                         size: AppSizes.iconMd,
                       ),
                     ],

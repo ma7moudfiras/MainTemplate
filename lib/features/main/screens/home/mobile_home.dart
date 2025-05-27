@@ -85,18 +85,7 @@ class MobileHomeScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      /*
-                    /// --- Promo Slider --
-                    const AppPromoSlider(
-                      banners: [
-                        AppImages.promoBanner1,
-                        AppImages.promoBanner1,
-                        AppImages.promoBanner2,
-                        AppImages.promoBanner3,
-                      ],
-                    ),
-                    const SizedBox(height: AppSizes.spaceBtwItems),
-                */
+                   
                       /// --- Products --- ///
                       AppGridLayout(
                         itemCount: 4,

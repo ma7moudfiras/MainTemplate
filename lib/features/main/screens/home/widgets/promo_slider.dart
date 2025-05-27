@@ -21,10 +21,10 @@ class AppPromoSlider extends StatelessWidget {
             autoPlayAnimationDuration: Duration(seconds: 1),
             autoPlayInterval: Duration(seconds: 5),
             pauseAutoPlayOnTouch: true,
-            viewportFraction: 0.5,
+            viewportFraction: 0.4,
 
             enlargeCenterPage: true,
-            aspectRatio: 3,
+            aspectRatio: 3.5,
             autoPlayCurve: Curves.linear,
 
             onPageChanged: (index, _) => controller.updatePageIndicator(index),

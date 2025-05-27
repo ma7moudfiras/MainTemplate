@@ -17,7 +17,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50, // Custom height
+      height: 40, // Custom height
       decoration: BoxDecoration(
         color: darkMode ? AppColors.black : Colors.white,
         boxShadow: [
@@ -50,7 +50,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         width: 60,
         child: Icon(
           icon,
-          size: 24,
+          size: 20,
           color: isSelected
               ? (darkMode ? Colors.white : Colors.black)
               : (darkMode ? Colors.white54 : Colors.black54),

@@ -4,16 +4,11 @@ import 'package:palventure/utils/constants/colors.dart';
 import 'package:palventure/utils/constants/text_strings.dart';
 import 'package:palventure/utils/helpers/helper_functions.dart';
 
-class MyAlertsAppBar extends StatelessWidget {
-   const MyAlertsAppBar({
-    super.key,
-
-  });
-
+class MyAlertsAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MyAlertsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final dark = AppHelperFunctions.isDarkMode(context);
 
     return MyAppBar(
@@ -37,4 +32,7 @@ class MyAlertsAppBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

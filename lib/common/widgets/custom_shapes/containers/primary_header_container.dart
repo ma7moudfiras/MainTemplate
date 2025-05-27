@@ -40,24 +40,7 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
 
             /// The main child
             child,
-            /// Decorative Circles
-            Positioned(
-              top: -150,
-              right: -250,
-              child: AppCircularContainer(
-                backgroundColor: AppColors.white.withOpacity(0.1),
-              ),
-            ),
-            Positioned(
-              top: 150,
-              right: -300,
-              child: AppCircularContainer(
-                backgroundColor: AppColors.white.withOpacity(0.1),
-              ),
-            ),
-
-            /// The main child
-            child,
+            
 
           ],
         
